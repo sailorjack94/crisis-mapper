@@ -14,3 +14,18 @@ The project must:
 ![Wireframe 1](**)
 
 ![Wireframe 2](**)
+
+
+## Dependencies/Libraries/Packages
+
+-> ReactJS
+-> three
+-> react-globe.gl
+-> d3
+-> enzyme/cypress
+
+
+## API's used
+
+-> RESTFUL Countries API
+-> Seismic Portal EU API
