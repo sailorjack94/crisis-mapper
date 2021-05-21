@@ -55,6 +55,8 @@ const GlobeContainer = () => {
             bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
             backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
 
+
+            //Countries
             // labelsData={countries}
             // labelSize={country => Math.log10(country.population) * 4e-1}
             // labelText={country => country.name}
@@ -62,6 +64,7 @@ const GlobeContainer = () => {
             // labelLng={country => country.latlng[1]}
             // labelsTest={country => country.name}
 
+            //Earthquakes
             pointsData = {events}
             pointLat = {event => event.ev_latitude}
             pointLng = {event => event.ev_longitude}
