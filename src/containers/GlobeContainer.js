@@ -7,14 +7,18 @@ import React, {useState, useRef, useEffect} from 'react';
 
 const GlobeContainer = () => {
 
+    var selector = 0;
+
     const globeElement = useRef()
 
     const [countries, setCountries] = useState([])
+    const [events, setEvents] = useState([])
 
     useEffect(() => {
         getCountries()
-        globeElement.current.controls().autoRotate = true;
-        globeElement.current.controls().autoRotateSpeed = 1.0;
+        getEvents()
+        //globeElement.current.controls().autoRotate = true;
+        //globeElement.current.controls().autoRotateSpeed = 1.0;
     }, [])
 
     const getCountries = () => {
@@ -32,22 +36,42 @@ const GlobeContainer = () => {
      };
  };
 
+    const getEvents = () => {
+        fetch('https://seismicportal.eu/mtws/api/search?&format=json&downloadAsFile=false&orderby=time-desc&offset=30&limit=100')
+            .then(res => res.json())
+            .then(eventsData => setEvents(eventsData))
+    }
+
+
+
 
 
     return (
+  
         <Globe
-            ref = {globeElement}
+            ref={globeElement}
             className="world"
             globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
             bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
             backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
 
-            labelsData = {countries}
-            labelSize = {country => Math.log10(country.population) * 4e-1}
-            labelText = {country => country.name}
-            labelLat = {country => country.latlng[0]}
-            labelLng = {country => country.latlng[1]}
-            labelsTest = {country => country.name}
+            // labelsData={countries}
+            // labelSize={country => Math.log10(country.population) * 4e-1}
+            // labelText={country => country.name}
+            // labelLat={country => country.latlng[0]}
+            // labelLng={country => country.latlng[1]}
+            // labelsTest={country => country.name}
+
+            pointsData = {events}
+            pointLat = {event => event.ev_latitude}
+            pointLng = {event => event.ev_longitude}
+            pointLabel = {event => event.ev_region}
+            pointColor = {() => '#ff0000'}
+            //add function to scale radius depending on magnitude
+            pointRadius = {2.5}
+            //add callback function to display something. Callback event.
+            //onPointClick = {}
+
         />
     );
 };
