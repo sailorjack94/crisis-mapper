@@ -13,6 +13,7 @@ const GlobeContainer = () => {
 
     const [countries, setCountries] = useState([])
     const [events, setEvents] = useState([])
+    const [selectEvent, setSelectEvent] =useState(null)
 
     useEffect(() => {
         getCountries()
@@ -40,6 +41,12 @@ const GlobeContainer = () => {
         fetch('https://seismicportal.eu/mtws/api/search?&format=json&downloadAsFile=false&orderby=time-desc&offset=30&limit=100')
             .then(res => res.json())
             .then(eventsData => setEvents(eventsData))
+    }
+
+    const onEventClicked =function (event) {
+        setSelectEvent(event)
+
+
     }
 
 
@@ -71,7 +78,7 @@ const GlobeContainer = () => {
             pointLabel = {event => event.ev_region}
             pointColor = {() => '#ff0000'}
             //add function to scale radius depending on magnitude
-            pointRadius = {2.5}
+            pointRadius = {0.5}
             //add callback function to display something. Callback event.
             //onPointClick = {}
 
