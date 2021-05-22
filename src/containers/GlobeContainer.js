@@ -92,7 +92,7 @@ const GlobeContainer = () => {
     } else if (selector === 1) {
         return(
             <>
-            <Header />
+            <Header selector={selector}/>
             <Globe
             ref={globeElement}
             className="world"
@@ -113,6 +113,7 @@ const GlobeContainer = () => {
             pointsData = {quakes}
             pointLat = {event => event.ev_latitude}
             pointLng = {event => event.ev_longitude}
+            pointResolution = {3}
             pointLabel = {event => [event.ev_mag_value, event.ev_region]}
             pointColor = {() => '#ff0000'}
             //add function to scale radius depending on magnitude

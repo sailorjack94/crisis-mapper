@@ -2,15 +2,23 @@
 
 .title {
     font-family: 'Newsreader';
-    color: white;
+    color: rgba(255, 255, 255);
     position: absolute;
     z-index: 1;
 }
 
-.front-text {
+.splash-text {
     font-family: 'Newsreader';
     z-index: 1;
-    color: white;
+    color: rgba(255, 255, 255, 0.75);
     position: absolute;
     top: 5%;
+}
+
+.content-category {
+    font-family: 'Newsreader';
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    top: 10%;
 }
