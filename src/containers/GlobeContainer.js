@@ -1,5 +1,6 @@
 import Globe from 'react-globe.gl';
 import React, {useState, useRef, useEffect} from 'react';
+import Header from '../components/Header'
 
 
 
@@ -54,6 +55,8 @@ const GlobeContainer = () => {
 
 
     return (
+        <>
+        <Header />
   
         <Globe
             ref={globeElement}
@@ -84,9 +87,12 @@ const GlobeContainer = () => {
             //onPointClick = {}
 
         />
+        </>
     );
     } else if (selector === 1) {
         return(
+            <>
+            <Header />
             <Globe
             ref={globeElement}
             className="world"
@@ -113,11 +119,13 @@ const GlobeContainer = () => {
             pointAltitude = {event => (event.ev_mag_value - 5)/4}
             pointRadius = {1}
             //add callback function to display something. Callback event.
-            //onPointClick = {}
+            onPointClick = {event => event.pointLabel = 'clicked'}
 
         />
+        </>
         )
     } 
+
 };
 
 export default GlobeContainer;
