@@ -7,16 +7,17 @@ import React, {useState, useRef, useEffect} from 'react';
 
 const GlobeContainer = () => {
 
-    var selector = 0;
+    var selector = 1;
 
     const globeElement = useRef()
 
     const [countries, setCountries] = useState([])
-    const [events, setEvents] = useState([])
+    const [quakes, setQuakes] = useState([])
+    const [floods, setFloods] = useState([])
 
     useEffect(() => {
         getCountries()
-        getEvents()
+        getQuakes()
         //globeElement.current.controls().autoRotate = true;
         //globeElement.current.controls().autoRotateSpeed = 1.0;
     }, [])
@@ -36,10 +37,16 @@ const GlobeContainer = () => {
      };
  };
 
-    const getEvents = () => {
+    const getQuakes = () => {
         fetch('https://seismicportal.eu/mtws/api/search?minmag=5.1&format=json&downloadAsFile=false&orderby=time-desc&offset=0&limit=20')
             .then(res => res.json())
-            .then(eventsData => setEvents(eventsData))
+            .then(quakeData => setQuakes(quakeData))
+    }
+
+    const getFloods = () => {
+        fetch('https://api.reliefweb.int/v1/disasters?appname=rwint-user-0&profile=list&preset=latest&slim=1')
+        .then (res => res.json())
+        .then (floodsData => setFloods(floodsData))
     }
 
     if (selector === 0) {
@@ -78,7 +85,7 @@ const GlobeContainer = () => {
 
         />
     );
-    } else {
+    } else if (selector === 1) {
         return(
             <Globe
             ref={globeElement}
@@ -97,7 +104,7 @@ const GlobeContainer = () => {
             // labelsTest={country => country.name}
 
             //Earthquakes
-            pointsData = {events}
+            pointsData = {quakes}
             pointLat = {event => event.ev_latitude}
             pointLng = {event => event.ev_longitude}
             pointLabel = {event => [event.ev_mag_value, event.ev_region]}
@@ -110,7 +117,7 @@ const GlobeContainer = () => {
 
         />
         )
-    }
+    } 
 };
 
 export default GlobeContainer;
