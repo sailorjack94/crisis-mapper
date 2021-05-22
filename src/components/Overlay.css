@@ -1,0 +1,8 @@
+.overlay {
+    position: absolute;
+    z-index: 1;
+}
+
+.overlay > h1 {
+    color: white;
+}
