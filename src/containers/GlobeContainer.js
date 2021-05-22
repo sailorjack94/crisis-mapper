@@ -37,7 +37,7 @@ const GlobeContainer = () => {
  };
 
     const getEvents = () => {
-        fetch('https://seismicportal.eu/mtws/api/search?&format=json&downloadAsFile=false&orderby=time-desc&offset=30&limit=100')
+        fetch('https://seismicportal.eu/mtws/api/search?minmag=5.1&format=json&downloadAsFile=false&orderby=time-desc&offset=0&limit=20')
             .then(res => res.json())
             .then(eventsData => setEvents(eventsData))
     }
@@ -57,21 +57,22 @@ const GlobeContainer = () => {
 
 
             //Countries
-            // labelsData={countries}
-            // labelSize={country => Math.log10(country.population) * 4e-1}
-            // labelText={country => country.name}
-            // labelLat={country => country.latlng[0]}
-            // labelLng={country => country.latlng[1]}
-            // labelsTest={country => country.name}
+            labelsData={countries}
+            labelSize={country => Math.log10(country.population) * 4e-1}
+            labelText={country => country.name}
+            labelLat={country => country.latlng[0]}
+            labelLng={country => country.latlng[1]}
+            labelsTest={country => country.name}
 
             //Earthquakes
             pointsData = {events}
             pointLat = {event => event.ev_latitude}
             pointLng = {event => event.ev_longitude}
-            pointLabel = {event => event.ev_region}
+            pointLabel = {event => [event.ev_mag_value, event.ev_region]}
             pointColor = {() => '#ff0000'}
             //add function to scale radius depending on magnitude
-            pointRadius = {2.5}
+            pointAltitude = {event => (event.ev_mag_value - 5)/4}
+            pointRadius = {1}
             //add callback function to display something. Callback event.
             //onPointClick = {}
 
