@@ -42,7 +42,7 @@ const GlobeContainer = () => {
             .then(eventsData => setEvents(eventsData))
     }
 
-
+    if (selector === 0) {
 
 
 
@@ -65,6 +65,38 @@ const GlobeContainer = () => {
             labelsTest={country => country.name}
 
             //Earthquakes
+            // pointsData = {events}
+            // pointLat = {event => event.ev_latitude}
+            // pointLng = {event => event.ev_longitude}
+            // pointLabel = {event => [event.ev_mag_value, event.ev_region]}
+            // pointColor = {() => '#ff0000'}
+            //add function to scale radius depending on magnitude
+            // pointAltitude = {event => (event.ev_mag_value - 5)/4}
+            // pointRadius = {1}
+            //add callback function to display something. Callback event.
+            //onPointClick = {}
+
+        />
+    );
+    } else {
+        return(
+            <Globe
+            ref={globeElement}
+            className="world"
+            globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+            bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+            backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+
+
+            //Countries
+            // labelsData={countries}
+            // labelSize={country => Math.log10(country.population) * 4e-1}
+            // labelText={country => country.name}
+            // labelLat={country => country.latlng[0]}
+            // labelLng={country => country.latlng[1]}
+            // labelsTest={country => country.name}
+
+            //Earthquakes
             pointsData = {events}
             pointLat = {event => event.ev_latitude}
             pointLng = {event => event.ev_longitude}
@@ -77,7 +109,8 @@ const GlobeContainer = () => {
             //onPointClick = {}
 
         />
-    );
+        )
+    }
 };
 
 export default GlobeContainer;
