@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader&display=swap');
 
 .title {
-    background-color: black;
     font-family: 'Newsreader';
     color: white;
     position: absolute;
     z-index: 1;
+}
+
+.front-text {
+    font-family: 'Newsreader';
+    z-index: 1;
+    color: white;
+    position: absolute;
+    top: 5%;
 }
