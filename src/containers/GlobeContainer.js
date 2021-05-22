@@ -1,5 +1,6 @@
 import Globe from 'react-globe.gl';
 import React, {useState, useRef, useEffect} from 'react';
+import ShowEvent from '../component/ShowEvent';
 
 
 
@@ -13,7 +14,7 @@ const GlobeContainer = () => {
 
     const [countries, setCountries] = useState([])
     const [events, setEvents] = useState([])
-    const [eventClick, setEventClick] =useState(null)
+    const [showEvent, setShowEvent] =useState(false)
 
     useEffect(() => {
         getCountries()
@@ -43,10 +44,8 @@ const GlobeContainer = () => {
             .then(eventsData => setEvents(eventsData))
     }
 
-    const onEventClicked =function (event) {
-        setEventClick(event)
-
-
+    const onClickEvent = (event) =>{
+        setShowEvent(event)
     }
 
 
@@ -54,7 +53,7 @@ const GlobeContainer = () => {
 
 
     return (
-  
+  <div>
         <Globe
             ref={globeElement}
             className="world"
@@ -77,13 +76,17 @@ const GlobeContainer = () => {
             pointLng = {event => event.ev_longitude}
             pointLabel = {event => event.ev_region}
             pointColor = {() => '#ff0000'}
+            onPointClick = {onClickEvent}
+           
             //add function to scale radius depending on magnitude
             pointRadius = {0.5}
             //add callback function to display something. Callback event.
             //onPointClick = {}
 
         />
-    );
+        <ShowEvent event = {events} showEvent = {showEvent}/>
+        </div>
+    ); 
 };
 
 export default GlobeContainer;
