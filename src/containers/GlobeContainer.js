@@ -79,7 +79,7 @@ const GlobeContainer = () => {
             pointLabel = {event => event.ev_region}
             pointColor = {() => '#ff0000'}
             onPointClick = {onClickEvent}
-           
+            
             //add function to scale radius depending on magnitude
             pointRadius = {0.5}
             //add callback function to display something. Callback event.

@@ -12,9 +12,9 @@ const ShowEvent = ({showEvent}) => {
          <div class = "back">
         <div id = "click">
         
-        <p>Location:{showEvent.ev_region}</p>
-        <p>Time and Date: {showEvent.ev_event_time}</p>
-        <p>Delta time:{showEvent.deltatime}</p>:
+        <p>{showEvent.ev_region}</p>
+        <p>{showEvent.ev_event_time}</p>
+        <p>{showEvent.deltatime}</p>:
         </div>
         </div>
         
