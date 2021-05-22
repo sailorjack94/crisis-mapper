@@ -13,7 +13,7 @@ const GlobeContainer = () => {
 
     const [countries, setCountries] = useState([])
     const [events, setEvents] = useState([])
-    const [selectEvent, setSelectEvent] =useState(null)
+    const [eventClick, setEventClick] =useState(null)
 
     useEffect(() => {
         getCountries()
@@ -44,7 +44,7 @@ const GlobeContainer = () => {
     }
 
     const onEventClicked =function (event) {
-        setSelectEvent(event)
+        setEventClick(event)
 
 
     }
