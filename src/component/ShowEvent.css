@@ -1,0 +1,23 @@
+#click {
+   display:grid;
+    background-color: red;
+    border:100px;
+    margin-left: 35%;
+    margin-right: 35%;
+    border-radius: 100px;
+    padding-top: 50px;
+
+
+    
+   
+
+    
+    
+    
+}
+
+.back{
+    background-image: url('//unpkg.com/three-globe/example/img/night-sky.png');
+    margin-top:-50px;
+    padding-top: 50px;
+}

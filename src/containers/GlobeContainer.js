@@ -1,6 +1,7 @@
 import Globe from 'react-globe.gl';
 import React, {useState, useRef, useEffect} from 'react';
 import ShowEvent from '../component/ShowEvent';
+import './GlobeContainer.css'
 
 
 
@@ -53,13 +54,14 @@ const GlobeContainer = () => {
 
 
     return (
-  <div>
+       <div>
         <Globe
             ref={globeElement}
             className="world"
             globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
             bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-            backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+            backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png" 
+            class="backgroundimage"
 
 
             //Countries
@@ -82,10 +84,11 @@ const GlobeContainer = () => {
             pointRadius = {0.5}
             //add callback function to display something. Callback event.
             //onPointClick = {}
-
+            
         />
         <ShowEvent event = {events} showEvent = {showEvent}/>
         </div>
+      
     ); 
 };
 
