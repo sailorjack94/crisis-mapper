@@ -3,9 +3,6 @@ import React, {useState, useRef, useEffect} from 'react';
 import Header from '../components/Header'
 
 
-
-
-
 const GlobeContainer = () => {
 
     var selector = 1;
@@ -19,9 +16,14 @@ const GlobeContainer = () => {
     useEffect(() => {
         getCountries()
         getQuakes()
-        //globeElement.current.controls().autoRotate = true;
-        //globeElement.current.controls().autoRotateSpeed = 1.0;
+        globeElement.current.controls().autoRotate = true;
+        globeElement.current.controls().autoRotateSpeed = 0.5;
+        ;
     }, [])
+
+    const handleSelectorChange = () => {
+        
+    }
 
     const getCountries = () => {
         fetch("https://restcountries.eu/rest/v2/all")
@@ -92,7 +94,7 @@ const GlobeContainer = () => {
     } else if (selector === 1) {
         return(
             <>
-            <Header selector={selector}/>
+            <Header selector={selector} handleSelectorChange = {handleSelectorChange}/>
             <Globe
             ref={globeElement}
             className="world"
