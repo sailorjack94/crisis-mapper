@@ -5,7 +5,11 @@ import {cleanCountries, normaliseLabels} from '../helpers/api_helper';
 
 const GlobeContainer = () => {
 
-    const globeElement = useRef()
+    
+    const map_center = useRef({lat: 10, lng: 105, altitude: 1.0});
+    const globeElement = useRef({map_center: map_center.current});
+    const globeClickActive = useRef(false);
+    const eventTypes = ["earthquakes", "volcanos", "hurricanes", "wildfires"];
 
     const [populationRange, setPopulationRange] = useState({});
     const [countries, setCountries] = useState([]);
@@ -36,7 +40,7 @@ const GlobeContainer = () => {
 
     const propertySort = (prop) => {
         return function(a,b) {
-            return (a[prop] < b[prop]) ? 1: (a[prop] > b[prop]) ?-1 : 0;
+            return (a[prop] < b[prop]) ? 1: (a[prop] > b[prop]) ? -1 : 0;
         };
     };
 
@@ -57,15 +61,39 @@ const GlobeContainer = () => {
         };  
     };
 
+    const zoomToPoint = (data) => {
+        // capture the previous view
+        map_center.current = globeElement.current.pointOfView();
+        
+        // create a new map_center using the coordinates of the event of interest
+        const dataViewpoint = { lat: data.ev_latitude,
+                               lng: data.ev_longitude,
+                               altitude: 0.5 };
+        globeElement.current.pointOfView(dataViewpoint, 3500) // <- second arg is time to animate
+        globeElement.current.controls().autoRotate = false;
+        globeClickActive.current = true;
+    };
+
+    const onGlobeClick = (event) => {
+        console.log(event);
+        console.log(globeClickActive.current)
+        if (globeClickActive.current) {
+            globeElement.current.pointOfView(map_center.current, 3500) 
+            globeElement.current.controls().autoRotate = true;
+            globeClickActive.current = false;
+        }
+    }
+
     return (
         <div className="globe-container">
-            <Overlay />
+            <Overlay eventTypes={eventTypes}/>
             <Globe
                 className="world"
                 ref={globeElement}
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
                 backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+                onGlobeClick={({lat, lng}, event) => onGlobeClick(event) }
 
                 //Countries
                 labelsData={countries}
@@ -83,9 +111,9 @@ const GlobeContainer = () => {
                 pointLabel = {event => event.ev_region}
                 pointColor = {() => '#ff0000'}
                 //add function to scale radius depending on magnitude
-                pointRadius = {2.5}
+                pointRadius = {0.5}
                 //add callback function to display something. Callback event.
-                //onPointClick = {}
+                onPointClick = {event => zoomToPoint(event)}
 
             />
         </div>

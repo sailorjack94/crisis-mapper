@@ -5,4 +5,9 @@
 
 .overlay > h1 {
     color: white;
+    opacity: 0.7;
+}
+
+.intro {
+    color: white;
 }
