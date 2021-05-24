@@ -1,0 +1,13 @@
+.crisis-wrapper {
+    width: 100%;
+}
+
+.crisis-wrapper > select {
+    width: 75%;
+    height: 50px;
+    font-size: 12pt;
+    border-color: white;
+    color: white;
+    background-color: rgba(0, 0, 0, 1);
+    margin: 0;
+}

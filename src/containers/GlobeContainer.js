@@ -138,7 +138,8 @@ const GlobeContainer = () => {
                     onPointClick={event => zoomToPoint(event)}
 
                 />
-                <ShowEvent showEvent={showEvent} />
+                {globeClickActive.current ? <ShowEvent showEvent={showEvent} /> : null}
+                    
             </div>
         );
     };
