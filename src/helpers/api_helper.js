@@ -45,7 +45,7 @@ export const cleanData = function (data, dtype) {
                     ev_latitude: record.fields.coordinates[0],
                     ev_longitude: record.fields.coordinates[1],
                     elevation: record.fields.elevation,
-                    year: ev_year< 0 ? ev_year.toString() + 'BC' : ev_year,
+                    time: ev_year< 0 ? ev_year.toString() + 'BC' : ev_year,
                     ev_mag_value: 0,
                     deaths: "no data"
             };
