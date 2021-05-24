@@ -56,7 +56,7 @@ const GlobeContainer = () => {
         // capture the previous view
         if (!globeClickActive.current) {
             map_center.current = globeElement.current.pointOfView();
-        }
+        };
 
         // create a new map_center using the coordinates of the event of interest
         const dataViewpoint = {
