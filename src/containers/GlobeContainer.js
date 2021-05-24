@@ -52,6 +52,7 @@ const GlobeContainer = () => {
     
 
     const zoomToPoint = (data) => {
+        console.log(data)
         // capture the previous view
         if (!globeClickActive.current) {
             map_center.current = globeElement.current.pointOfView();
@@ -68,8 +69,7 @@ const GlobeContainer = () => {
     };
 
     const onGlobeClick = (event) => {
-        console.log(event);
-        console.log(globeClickActive.current)
+    
         if (globeClickActive.current) {
             globeElement.current.pointOfView(map_center.current, 3500) 
             globeElement.current.controls().autoRotate = true;

@@ -4,7 +4,7 @@ export const apiUrls = {
     volcanoes: 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=significant-volcanic-eruption-database&q=&rows=250&facet=year&facet=tsu&facet=eq&facet=name&facet=location&facet=country&facet=type&facet=status&facet=deaths_description&facet=missing_description&facet=injuries_description&facet=damage_description&facet=houses_destroyed_description&facet=total_deaths_description&facet=total_missing_description&facet=total_injuries_description&facet=total_damage_description&facet=total_houses_destroyed_description&facet=houses_damaged_description'
 }
 export const cleanData = function (data, dtype) {
-    console.log(data);
+   
     let cleanedData;
     switch (dtype) {
         case "countries":
@@ -23,7 +23,7 @@ export const cleanData = function (data, dtype) {
         case "earthquakes":
             cleanedData = data.map(datum => {
                 return {
-                    location: datum.ev_region,
+                    ev_region: datum.ev_region,
                     time: datum.ev_event_time,
                     depth: datum.ev_depth,
                     ev_mag_value: datum.ev_mag_value,
