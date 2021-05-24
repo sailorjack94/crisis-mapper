@@ -19,6 +19,6 @@ const CrisisSelector = ({eventTypes, onCrisisChange}) => {
             </select>
         </div>
     );
-}
+};
 
 export default CrisisSelector;

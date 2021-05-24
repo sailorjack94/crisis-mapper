@@ -1,3 +1,3 @@
 export const apiDescriptors = {
-    earthquakes: ""
+    earthquakes: "An earthquake is a "
 }
