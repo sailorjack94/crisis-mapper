@@ -40,14 +40,14 @@ export const cleanData = function (data, dtype) {
                 // 0 (0.0001 km3) - 8 (1000 km3). use this as surrogate for magnitude
                 const newData = {
                     name: record.fields.name,
-                    location: `${ record.fields.location }, ${ record.fields.country }`,
+                    ev_region: `${ record.fields.location }, ${ record.fields.country }`,
                     type: record.fields.type,
                     ev_latitude: record.fields.coordinates[0],
                     ev_longitude: record.fields.coordinates[1],
                     elevation: record.fields.elevation,
-                    year: ev_year<0 ?ev_year.toString() + 'BC' : ev_year,
-                        ev_mag_value: record.fields.vei,
-                            deaths: "no data"
+                    year: ev_year< 0 ? ev_year.toString() + 'BC' : ev_year,
+                    ev_mag_value: record.fields.vei,
+                    deaths: "no data"
             };
             if (record.fields.hasOwnProperty('total_deaths_description')) {
                 newData.deaths = record.fields.total_deaths_description;
@@ -58,6 +58,7 @@ export const cleanData = function (data, dtype) {
         default:
 break;
     }
+    console.log(cleanedData)
 return cleanedData;
 };
 export const normaliseLabels = function (data, propLow, propHigh, normLow = 0.5, normHigh = 2.5) {

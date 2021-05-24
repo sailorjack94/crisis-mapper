@@ -10,7 +10,7 @@ const GlobeContainer = () => {
     const map_center = useRef({ lat: 10, lng: 105, altitude: 1.0 });
     const globeElement = useRef({ map_center: map_center.current });
     const globeClickActive = useRef(false);
-    const eventTypes = ["earthquakes", "volcanos", "hurricanes", "wildfires"];
+    const eventTypes = ["earthquakes", "volcanoes", "hurricanes", "wildfires"];
 
 
     const [countries, setCountries] = useState([]);
@@ -20,7 +20,6 @@ const GlobeContainer = () => {
 
     useEffect(() => {
         getCountries();
-        getEvents(eventTypes[0]);
         globeElement.current.controls().autoRotate = true;
         globeElement.current.controls().autoRotateSpeed = 0.7;
     }, []);
@@ -42,12 +41,15 @@ const GlobeContainer = () => {
             .then(res => res.json())
             .then(data => cleanData(data, crisis))
             .then(cleanedData => cleanedData.sort(propertySort('ev_mag_value')))
-            .then(sortedData => setEvents(sortedData));
+            .then(sortedData => {
+                const newEvents = [...sortedData];
+                setEvents(newEvents);
+            });
     }
 
     const onCrisisChange = (crisis) => {
         getEvents(crisis);
-        setSelector(1)
+        setSelector(1);
     };
 
 
