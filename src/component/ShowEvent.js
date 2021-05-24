@@ -8,15 +8,16 @@ const ShowEvent = ({showEvent}) => {
 
 
     return (
-        
-         <div class = "back">
-        <div id = "click">
+       
+    
+         <div id = "click" >
+            
         
         <p>{showEvent.ev_region}</p>
         <p>{showEvent.ev_event_time}</p>
-        <p>{showEvent.deltatime}</p>:
-        </div>
-        </div>
+        <p>{showEvent.deltatime}</p>
+         </div> 
+        
         
 
 
