@@ -6,12 +6,10 @@ import ShowEvent from '../components/ShowEvent'
 
 const GlobeContainer = () => {
 
-
     const map_center = useRef({ lat: 10, lng: 105, altitude: 1.0 });
     const globeElement = useRef({ map_center: map_center.current });
     const globeClickActive = useRef(false);
-    const eventTypes = ["earthquakes", "volcanoes", "hurricanes", "wildfires"];
-
+    const eventTypes = ["earthquakes", "volcanoes", "wildfires", "hurricanes"];
 
     const [countries, setCountries] = useState([]);
     const [events, setEvents] = useState([]);
@@ -23,7 +21,6 @@ const GlobeContainer = () => {
         globeElement.current.controls().autoRotate = true;
         globeElement.current.controls().autoRotateSpeed = 0.7;
     }, []);
-
 
     const getCountries = () => {
         fetch(apiUrls.countries)
@@ -51,7 +48,6 @@ const GlobeContainer = () => {
         getEvents(crisis);
         setSelector(1);
     };
-
 
     const zoomToPoint = (data) => {
         console.log(data)
@@ -136,7 +132,6 @@ const GlobeContainer = () => {
                     pointResolution={3}
                     //add callback function to display something. Callback event.
                     onPointClick={event => zoomToPoint(event)}
-
                 />
                 <ShowEvent showEvent={showEvent} />
             </div>

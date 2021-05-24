@@ -1,7 +1,8 @@
 export const apiUrls = {
     countries: 'https://restcountries.eu/rest/v2/all',
     earthquakes: 'https://seismicportal.eu/mtws/api/search?&format=json&downloadAsFile=false&orderby=time-desc&offset=30&limit=100',
-    volcanoes: 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=significant-volcanic-eruption-database&q=&rows=250&facet=year&facet=tsu&facet=eq&facet=name&facet=location&facet=country&facet=type&facet=status&facet=deaths_description&facet=missing_description&facet=injuries_description&facet=damage_description&facet=houses_destroyed_description&facet=total_deaths_description&facet=total_missing_description&facet=total_injuries_description&facet=total_damage_description&facet=total_houses_destroyed_description&facet=houses_damaged_description'
+    volcanoes: 'https://public.opendatasoft.com/api/records/1.0/search/?dataset=significant-volcanic-eruption-database&q=&rows=250&facet=year&facet=tsu&facet=eq&facet=name&facet=location&facet=country&facet=type&facet=status&facet=deaths_description&facet=missing_description&facet=injuries_description&facet=damage_description&facet=houses_destroyed_description&facet=total_deaths_description&facet=total_missing_description&facet=total_injuries_description&facet=total_damage_description&facet=total_houses_destroyed_description&facet=houses_damaged_description',
+    wildfires: 'https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories/8?days=20&status=open'
 }
 export const cleanData = function (data, dtype) {
    
@@ -58,6 +59,22 @@ export const cleanData = function (data, dtype) {
             return newData;
     });
     break;
+    case "wildfires":
+        const geometries = data.geometries
+        {
+            cleanedData = geometries.map(datum => {
+                return {
+                    // ev_region: datum.ev_region,
+                    time: datum.date,
+                    depth: datum.ev_depth,
+                    // ev_mag_value: datum.ev_mag_value,
+                    ev_latitude: datum.coordinates[0],
+                    ev_longitude: datum.coordinates[1]
+                };
+
+        });
+        break;
+
         default:
 break;
     }
