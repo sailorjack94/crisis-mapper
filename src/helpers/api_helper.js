@@ -46,12 +46,15 @@ export const cleanData = function (data, dtype) {
                     ev_longitude: record.fields.coordinates[1],
                     elevation: record.fields.elevation,
                     year: ev_year< 0 ? ev_year.toString() + 'BC' : ev_year,
-                    ev_mag_value: record.fields.vei,
+                    ev_mag_value: 0,
                     deaths: "no data"
             };
             if (record.fields.hasOwnProperty('total_deaths_description')) {
                 newData.deaths = record.fields.total_deaths_description;
-            }
+            };
+            if (record.fields.hasOwnProperty('vei')) {
+                newData.ev_mag_value = record.fields.vei;
+            };
             return newData;
     });
     break;
@@ -64,8 +67,12 @@ return cleanedData;
 export const normaliseLabels = function (data, propLow, propHigh, normLow = 0.5, normHigh = 2.5) {
     // normalise label size within the range [0.5, 2.5]
     // default determined from testing
+    if (data === 0) {
+        return normLow;
+    };
     const normRange = normHigh - normLow;
-    return ((((data - propLow) / (propHigh - propLow)) * normRange) + normLow)
+    const normal = (((data - propLow) / (propHigh - propLow)) * normRange) + normLow;
+    return normal;
 };
 export const propertySort = (prop) => {
     return function (a, b) {
