@@ -60,13 +60,13 @@ export const cleanData = function (data, dtype) {
     });
     break;
     case "wildfires":
-            cleanedData = geometries.map(datum => {
+            cleanedData = data.events.map(datum => {
                 return {
                     ev_region: datum.title,
-                    time: datum.geometries.date,
-                    ev_mag_value:0.1,
-                    ev_latitude: datum.geometries.coordinates[0],
-                    ev_longitude: datum.geometries.coordinates[1]
+                    time: datum.geometries[0].date,
+                    ev_mag_value:10,
+                    ev_latitude: datum.geometries[0].coordinates[0],
+                    ev_longitude: datum.geometries[0].coordinates[1]
                 };
             })
         break;
