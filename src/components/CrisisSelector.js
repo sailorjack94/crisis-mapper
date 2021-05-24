@@ -1,4 +1,5 @@
 import React from 'react';
+import './CrisisSelector.css'
 
 const CrisisSelector = ({eventTypes, onCrisisChange}) => {
 
