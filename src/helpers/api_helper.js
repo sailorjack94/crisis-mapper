@@ -61,7 +61,7 @@ export const cleanData = function (data, dtype) {
         default:
 break;
     }
-    console.log(cleanedData)
+
 return cleanedData;
 };
 export const normaliseLabels = function (data, propLow, propHigh, normLow = 0.5, normHigh = 2.5) {
