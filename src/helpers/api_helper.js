@@ -60,19 +60,15 @@ export const cleanData = function (data, dtype) {
     });
     break;
     case "wildfires":
-        const geometries = data.geometries
-        {
             cleanedData = geometries.map(datum => {
                 return {
-                    // ev_region: datum.ev_region,
-                    time: datum.date,
-                    depth: datum.ev_depth,
-                    // ev_mag_value: datum.ev_mag_value,
-                    ev_latitude: datum.coordinates[0],
-                    ev_longitude: datum.coordinates[1]
+                    ev_region: datum.title,
+                    time: datum.geometries.date,
+                    ev_mag_value:0.1,
+                    ev_latitude: datum.geometries.coordinates[0],
+                    ev_longitude: datum.geometries.coordinates[1]
                 };
-
-        });
+            })
         break;
 
         default:
