@@ -128,10 +128,11 @@ const GlobeContainer = () => {
                     pointLabel={event => event.ev_region}
                     pointColor={() => '#ff0000'}
                     pointRadius={0.5}
-                    pointAltitude={event => normaliseLabels(event.ev_mag_value, events[events.length - 1].ev_mag_value, events[0].ev_mag_value, 0.01, 0.5)}
+                    pointAltitude={event => normaliseLabels(event.ev_mag_value, events[events.length - 1].ev_mag_value, events[0].ev_mag_value, 0.01, 0.5, console.log(event))}
                     pointResolution={3}
                     //add callback function to display something. Callback event.
                     onPointClick={event => zoomToPoint(event)}
+                    
                 />
                 <ShowEvent showEvent={showEvent} />
             </div>

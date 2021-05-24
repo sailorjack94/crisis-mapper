@@ -64,9 +64,9 @@ export const cleanData = function (data, dtype) {
                 return {
                     ev_region: datum.title,
                     time: datum.geometries[0].date,
-                    ev_mag_value:10,
-                    ev_latitude: datum.geometries[0].coordinates[0],
-                    ev_longitude: datum.geometries[0].coordinates[1]
+                    ev_mag_value:1,
+                    ev_latitude: datum.geometries[0].coordinates[1],
+                    ev_longitude: datum.geometries[0].coordinates[0]
                 };
             })
         break;
@@ -81,12 +81,16 @@ export const normaliseLabels = function (data, propLow, propHigh, normLow = 0.5,
     // normalise label size within the range [0.5, 2.5]
     // default determined from testing
     if (data === 0) {
+        console.log(data)
         return normLow;
+        
     };
     const normRange = normHigh - normLow;
     const normal = (((data - propLow) / (propHigh - propLow)) * normRange) + normLow;
     return normal;
+   
 };
+
 export const propertySort = (prop) => {
     return function (a, b) {
         return (a[prop] < b[prop]) ? 1 : (a[prop] > b[prop]) ? -1 : 0;
