@@ -6,8 +6,7 @@ import ShowEvent from '../components/ShowEvent'
 
 const GlobeContainer = () => {
 
-    const selector = 0;
-
+    
     const map_center = useRef({lat: 10, lng: 105, altitude: 1.0});
     const globeElement = useRef({map_center: map_center.current});
     const globeClickActive = useRef(false);
@@ -62,7 +61,7 @@ const GlobeContainer = () => {
         // create a new map_center using the coordinates of the event of interest
         const dataViewpoint = { lat: data.ev_latitude,
                                lng: data.ev_longitude,
-                               altitude: 0.7 };
+                               altitude: 0.5 };
         globeElement.current.pointOfView(dataViewpoint, 3500) // <- second arg is time to animate
         globeElement.current.controls().autoRotate = false;
         globeClickActive.current = true;
@@ -77,33 +76,6 @@ const GlobeContainer = () => {
             globeClickActive.current = false;
         }
        
-    }
- 
-    if (selector === 0) {
-        return(
-        <div className="globe-container">
-        <Overlay eventTypes={eventTypes} onCrisisChange ={onCrisisChange}/>
-        <Globe
-            className="world"
-            ref={globeElement}
-            globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-            bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-            backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
-            onGlobeClick={({lat, lng}, event) => onGlobeClick(event) }
-
-            //Countries
-            labelsData={countries}
-            labelSize={country => normaliseLabels(country.population, countries[countries.length - 1].population, countries[0].population)}
-            labelDotRadius={country => normaliseLabels(country.population, countries[countries.length - 1].population, countries[0].population, 0.5, 3.0)}
-            labelText={country => country.name}
-            labelLat={country => country.lat}
-            labelLng={country => country.lng}
-            labelColor={() => 'rgba(220, 155, 0, 0.70)'}
-            />
-            <ShowEvent showEvent = {showEvent} />
-</div>
-    )
-
     }
 
     return (
@@ -131,9 +103,9 @@ const GlobeContainer = () => {
                 pointLat = {event => event.ev_latitude}
                 pointLng = {event => event.ev_longitude}
                 pointLabel = {event => event.ev_region}
-                pointColor = {() => 'rgba(220, 0, 0, 0.5)'}
-                pointRadius = {0.25}
-                pointAltitude = {event => normaliseLabels(event.ev_mag_value, events[events.length - 1].ev_mag_value, events[0].ev_mag_value, 0.01, 0.5)}
+                pointColor = {() => '#ff0000'}
+                pointRadius = {1}
+                pointAltitude = {event => normaliseLabels(event.ev_mag_value, events[events.length - 1].ev_mag_value, events[0].ev_mag_value, 0.01, 1.0)}
                 pointResolution = {3}
                 //add callback function to display something. Callback event.
                 onPointClick = {event => zoomToPoint(event)}

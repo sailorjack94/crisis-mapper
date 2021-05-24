@@ -9,12 +9,17 @@ const ShowEvent = ({showEvent}) => {
 
     return (
        
+    
          <div id = "click" >
             
+        
         <p>{showEvent.ev_region}</p>
         <p>{showEvent.time}</p>
         <p>{showEvent.ev_mag_value}</p>
          </div> 
+        
+        
+
 
     )
 }
