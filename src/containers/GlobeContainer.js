@@ -61,7 +61,7 @@ const GlobeContainer = () => {
         // create a new map_center using the coordinates of the event of interest
         const dataViewpoint = { lat: data.ev_latitude,
                                lng: data.ev_longitude,
-                               altitude: 0.5 };
+                               altitude: 0.7 };
         globeElement.current.pointOfView(dataViewpoint, 3500) // <- second arg is time to animate
         globeElement.current.controls().autoRotate = false;
         globeClickActive.current = true;
@@ -104,7 +104,7 @@ const GlobeContainer = () => {
                 pointLng = {event => event.ev_longitude}
                 pointLabel = {event => event.ev_region}
                 pointColor = {() => '#ff0000'}
-                pointRadius = {1}
+                pointRadius = {0.5}
                 pointAltitude = {event => normaliseLabels(event.ev_mag_value, events[events.length - 1].ev_mag_value, events[0].ev_mag_value, 0.01, 1.0)}
                 pointResolution = {3}
                 //add callback function to display something. Callback event.
