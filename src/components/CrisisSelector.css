@@ -8,6 +8,6 @@
     width: 75%;
     color: white;
     border-color: white;
-    background-color: rgba(25, 25, 25, 0.99);
+    background-color: transparent;
     background-blend-mode: difference;
 }
