@@ -5,7 +5,7 @@ export const apiUrls = {
     wildfires: 'https://eonet.sci.gsfc.nasa.gov/api/v2.1/categories/8?days=20&status=open'
 }
 export const cleanData = function (data, dtype) {
-   
+
     let cleanedData;
     switch (dtype) {
         case "countries":
@@ -41,54 +41,53 @@ export const cleanData = function (data, dtype) {
                 // 0 (0.0001 km3) - 8 (1000 km3). use this as surrogate for magnitude
                 const newData = {
                     name: record.fields.name,
-                    ev_region: `${ record.fields.location }, ${ record.fields.country }`,
+                    ev_region: `${record.fields.location}, ${record.fields.country}`,
                     type: record.fields.type,
                     ev_latitude: record.fields.coordinates[0],
                     ev_longitude: record.fields.coordinates[1],
                     elevation: record.fields.elevation,
-                    time: ev_year< 0 ? ev_year.toString() + 'BC' : ev_year,
+                    time: ev_year < 0 ? ev_year.toString() + 'BC' : ev_year,
                     ev_mag_value: 0,
                     deaths: "no data"
-            };
-            if (record.fields.hasOwnProperty('total_deaths_description')) {
-                newData.deaths = record.fields.total_deaths_description;
-            };
-            if (record.fields.hasOwnProperty('vei')) {
-                newData.ev_mag_value = record.fields.vei;
-            };
-            return newData;
-    });
-    break;
-    case "wildfires":
+                };
+                if (record.fields.hasOwnProperty('total_deaths_description')) {
+                    newData.deaths = record.fields.total_deaths_description;
+                };
+                if (record.fields.hasOwnProperty('vei')) {
+                    newData.ev_mag_value = record.fields.vei;
+                };
+                return newData;
+            });
+            break;
+        case "wildfires":
             cleanedData = data.events.map(datum => {
                 return {
                     ev_region: datum.title,
                     time: datum.geometries[0].date,
-                    ev_mag_value:1,
+                    ev_mag_value: 1,
                     ev_latitude: datum.geometries[0].coordinates[1],
                     ev_longitude: datum.geometries[0].coordinates[0]
                 };
             })
-        break;
+            break;
 
         default:
-break;
+            break;
     }
-    console.log(cleanedData)
-return cleanedData;
+    return cleanedData;
 };
 export const normaliseLabels = function (data, propLow, propHigh, normLow = 0.5, normHigh = 2.5) {
     // normalise label size within the range [0.5, 2.5]
     // default determined from testing
     if (data === 0) {
-        console.log(data)
         return normLow;
-        
+    } else if (propLow===propHigh) {
+        return normLow;
     };
     const normRange = normHigh - normLow;
     const normal = (((data - propLow) / (propHigh - propLow)) * normRange) + normLow;
     return normal;
-   
+
 };
 
 export const propertySort = (prop) => {
