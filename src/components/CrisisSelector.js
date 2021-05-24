@@ -12,7 +12,7 @@ const CrisisSelector = ({eventTypes, onCrisisChange}) => {
 
     return (
         <div className="crisis-wrapper">
-            <select onChange = {handleCrisisChange} className="crisis-picker" defaultValue="">
+            <select onChange = {handleCrisisChange} className="optionbox" defaultValue="">
                 <option value="" disabled>Select a crisis to display</option>
                 {crises}
             </select>

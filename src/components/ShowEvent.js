@@ -12,7 +12,7 @@ const ShowEvent = ({showEvent}) => {
             <h5>Event Magnitude: </h5>
             <p>{showEvent.ev_mag_value}</p>
          </div> 
-    )
+             )
 }
 
 export default ShowEvent;

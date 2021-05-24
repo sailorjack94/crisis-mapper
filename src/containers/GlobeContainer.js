@@ -129,7 +129,7 @@ const GlobeContainer = () => {
                     pointLat={event => event.ev_latitude}
                     pointLng={event => event.ev_longitude}
                     pointLabel={event => event.ev_region}
-                    pointColor={() => '#ff0000'}
+                    pointColor={() => 'rgba(224, 10, 10, 0.51)'}
                     pointRadius={0.5}
                     pointAltitude={event => normaliseLabels(event.ev_mag_value, events[events.length - 1].ev_mag_value, events[0].ev_mag_value, 0.01, 0.5)}
                     pointResolution={3}

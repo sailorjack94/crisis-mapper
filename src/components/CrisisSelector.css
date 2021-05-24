@@ -1,0 +1,41 @@
+
+
+.optionbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.optionbox select {
+    background: #E91E63;
+    color: #fff;
+    padding: 10px;
+    width: 250px;
+    height: 50px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 48px rgb(93, 15, 9);
+    -webkit-appearance: button;
+    outline: none
+}
+
+.optionbox:before {
+    content: '\f358';
+    font-family: "Font Awesome 5 free";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 50px;
+    background: #E91E63;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 30px;
+    pointer-events: none
+}
+
+.optionbox:hover:before {
+    background: #c72059
+}
