@@ -2,6 +2,7 @@ import Globe from 'react-globe.gl';
 import Overlay from '../components/Overlay';
 import React, {useState, useRef, useEffect} from 'react';
 import {cleanCountries, normaliseLabels} from '../helpers/api_helper';
+import ShowEvent from '../components/ShowEvent'
 
 const GlobeContainer = () => {
 
@@ -14,6 +15,7 @@ const GlobeContainer = () => {
     const [populationRange, setPopulationRange] = useState({});
     const [countries, setCountries] = useState([]);
     const [events, setEvents] = useState([]);
+    const [showEvent, setShowEvent] = useState(false)
 
     useEffect(() => {
         getCountries();
@@ -72,6 +74,7 @@ const GlobeContainer = () => {
         globeElement.current.pointOfView(dataViewpoint, 3500) // <- second arg is time to animate
         globeElement.current.controls().autoRotate = false;
         globeClickActive.current = true;
+        setShowEvent(data)
     };
 
     const onGlobeClick = (event) => {
@@ -82,6 +85,7 @@ const GlobeContainer = () => {
             globeElement.current.controls().autoRotate = true;
             globeClickActive.current = false;
         }
+       
     }
 
     return (
@@ -117,8 +121,9 @@ const GlobeContainer = () => {
                 onPointClick = {event => zoomToPoint(event)}
 
             />
-        </div>
-    );
-};
 
+<ShowEvent showEvent = {showEvent} />
+</div>
+    )
+}
 export default GlobeContainer;
