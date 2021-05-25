@@ -15,4 +15,22 @@
     font-weight: normal;
 }
 
+a {
+    color:white;
+    text-decoration:none;
+}
 
+a:link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  
+a:visited {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  
+a:hover {
+    color: rgba(96, 170, 255, 0.774);
+    text-decoration: none;
+  }
