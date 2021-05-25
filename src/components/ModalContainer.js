@@ -25,7 +25,7 @@ class ModalContainer extends Component {
                 <Modal show={this.state.show} handleClose={this.hideModal}>
                     <p>Modal</p>
                 </Modal>
-                <button type="button" onClick={this.showModal}>
+                <button className="btn btn-outline-light" type="button" onClick={this.showModal}>
                     More Info
         </button>
             </main>

@@ -18,6 +18,7 @@ const Overlay = ({eventTypes, onCrisisChange}) => {
                 </p>                
             </div>
             <CrisisSelector eventTypes={eventTypes} onCrisisChange={onCrisisChange}/>
+            <br></br>
             <ModalContainer />
         </div>
     );
