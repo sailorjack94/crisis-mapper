@@ -2,6 +2,7 @@ import CrisisSelector from './CrisisSelector';
 import './Overlay.css';
 import React, { Component } from "react";
 import ModalContainer from './ModalContainer';
+import VideoModalContainer from './VideoModalContainer';
 
 
 const Overlay = ({eventTypes, onCrisisChange}) => {
@@ -20,6 +21,9 @@ const Overlay = ({eventTypes, onCrisisChange}) => {
             <CrisisSelector eventTypes={eventTypes} onCrisisChange={onCrisisChange}/>
             <br></br>
             <ModalContainer />
+            <div>
+            <VideoModalContainer/>
+            </div>
         </div>
     );
 }
