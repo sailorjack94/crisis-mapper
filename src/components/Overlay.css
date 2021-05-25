@@ -5,8 +5,8 @@
     position: absolute;
     z-index: 1;
     width: 310px;
-    height: 500px;
-    max-height: 500px;
+    height: 350px;
+    max-height: 350px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
