@@ -11,6 +11,7 @@ const ShowEvent = ({showEvent}) => {
             <p>{showEvent.time}</p>
             <h5>Event Magnitude: </h5>
             <p>{showEvent.ev_mag_value}</p>
+            <b><a rel="noreferrer" target='_blank' href={showEvent.url}>Find out more...</a></b>
          </div> 
              )
 }

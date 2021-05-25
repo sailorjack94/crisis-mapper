@@ -29,7 +29,8 @@ export const cleanData = function (data, dtype) {
                     depth: datum.ev_depth,
                     ev_mag_value: datum.ev_mag_value,
                     ev_latitude: datum.ev_latitude,
-                    ev_longitude: datum.ev_longitude
+                    ev_longitude: datum.ev_longitude,
+                    url: 'https://www.encyclopedia.com/earth-and-environment/geology-and-oceanography/geology-and-oceanography/earthquake'
                 };
             });
             break;
@@ -48,7 +49,8 @@ export const cleanData = function (data, dtype) {
                     elevation: record.fields.elevation,
                     time: ev_year < 0 ? ev_year.toString() + 'BC' : ev_year,
                     ev_mag_value: 0,
-                    deaths: "no data"
+                    deaths: "no data",
+                    url: 'https://www.encyclopedia.com/earth-and-environment/geology-and-oceanography/geology-and-oceanography/volcanoes'
                 };
                 if (record.fields.hasOwnProperty('total_deaths_description')) {
                     newData.deaths = record.fields.total_deaths_description;
@@ -66,7 +68,8 @@ export const cleanData = function (data, dtype) {
                     time: datum.geometries[0].date,
                     ev_mag_value: 1,
                     ev_latitude: datum.geometries[0].coordinates[1],
-                    ev_longitude: datum.geometries[0].coordinates[0]
+                    ev_longitude: datum.geometries[0].coordinates[0],
+                    url: datum.sources[0].url
                 };
             })
             break;
