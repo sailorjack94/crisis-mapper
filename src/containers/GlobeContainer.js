@@ -9,8 +9,7 @@ const GlobeContainer = () => {
     const map_center = useRef({ lat: 10, lng: 105, altitude: 1.0 });
     const globeElement = useRef({ map_center: map_center.current });
     const globeClickActive = useRef(false);
-    const eventTypes = ["earthquakes", "volcanoes", "hurricanes", "wildfires"];
-
+    const eventTypes = ["earthquakes", "volcanoes", "wildfires", "hurricanes"];
 
     const [countries, setCountries] = useState([]);
     const [events, setEvents] = useState([]);
@@ -22,7 +21,6 @@ const GlobeContainer = () => {
         globeElement.current.controls().autoRotate = true;
         globeElement.current.controls().autoRotateSpeed = 0.7;
     }, []);
-
 
     const getCountries = () => {
         fetch(apiUrls.countries)
@@ -50,7 +48,6 @@ const GlobeContainer = () => {
         getEvents(crisis);
         setSelector(1);
     };
-
 
     const zoomToPoint = (data) => {
         console.log(data)
@@ -129,16 +126,15 @@ const GlobeContainer = () => {
                     pointLat={event => event.ev_latitude}
                     pointLng={event => event.ev_longitude}
                     pointLabel={event => event.ev_region}
-                    pointColor={() => 'rgba(224, 10, 10, 0.51)'}
+                    pointColor={() => '#ff0000'}
                     pointRadius={0.5}
-                    pointAltitude={event => normaliseLabels(event.ev_mag_value, events[events.length - 1].ev_mag_value, events[0].ev_mag_value, 0.01, 0.5)}
+                    pointAltitude={event => normaliseLabels(event.ev_mag_value, events[events.length - 1].ev_mag_value, events[0].ev_mag_value, 0.01, 0.5, console.log(event))}
                     pointResolution={3}
                     //add callback function to display something. Callback event.
                     onPointClick={event => zoomToPoint(event)}
-
-                />
-                {globeClickActive.current ? <ShowEvent showEvent={showEvent} /> : null}
                     
+                />
+                <ShowEvent showEvent={showEvent} />
             </div>
         );
     };

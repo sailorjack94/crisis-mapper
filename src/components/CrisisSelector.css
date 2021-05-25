@@ -8,6 +8,10 @@
     width: 75%;
     color: white;
     border-color: white;
-    background-color:transparent;
-    background-blend-mode: difference;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.crisis-wrapper > select:hover {
+    cursor: pointer;
 }
