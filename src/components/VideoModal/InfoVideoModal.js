@@ -18,8 +18,8 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
     src="https://www.youtube.com/embed/e7ho6z32yyo" 
     title="YouTube video player" 
     frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+    >
     </iframe>
 
     <iframe 
@@ -30,8 +30,8 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
     src="https://www.youtube.com/embed/VNGUdObDoLk" 
     title="YouTube video player" 
     frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+  >
     </iframe>
 
     <iframe
@@ -42,8 +42,7 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
     src="https://www.youtube.com/embed/5hghT1W33cY" 
     title="YouTube video player" 
     frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen">
     </iframe>
 
       </div>

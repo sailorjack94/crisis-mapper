@@ -29,7 +29,8 @@
     color : rgba(255, 255, 255, 0.801);
 }
 
-
+@media screen
+ and (min-width: 460px), screen and (min-device-width:460px){
 .video {
   position:relative;
 
@@ -41,10 +42,12 @@
  
   }
 
+
 iframe {
   width:100%;
  
   }
+}
   #media{
     justify-content:space-between;
    }
