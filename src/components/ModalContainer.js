@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Modal from './modal/InfoModal';
+import VideoModal from './modal/InfoVideoModal'
 
 class ModalContainer extends Component {
     constructor() {
@@ -27,6 +28,9 @@ class ModalContainer extends Component {
                 </Modal>
                 <button className="btn btn-outline-light" type="button" onClick={this.showModal}>
                     More Info
+        </button>
+        <button className="btn btn-outline-light" type="button" onClick={this.showModal}>
+                    Video Info
         </button>
             </main>
         );
