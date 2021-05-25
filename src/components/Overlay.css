@@ -5,8 +5,8 @@
     position: absolute;
     z-index: 1;
     width: 310px;
-    height: 350px;
-    max-height: 350px;
+    height: 400px;
+    max-height: 400px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -27,8 +27,8 @@
 }
 
 .intro > p {
-    text-justify: distribute;
-    padding: 0%;
+    text-align: justify;
+    padding: 5%;
     margin: 0%;
 }
 
