@@ -45,7 +45,6 @@ iframe {
   width:100%;
  
   }
-/* .video{
-    padding-top:100px;
-    padding-right: 20px;
-}  */
+  #media{
+    justify-content:space-between;
+   }

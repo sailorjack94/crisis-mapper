@@ -25,7 +25,7 @@ class VideoModalContainer extends Component {
                 <VideoModal show={this.state.show} handleVideoClose={this.hideVideoModal}>
                     <p>Modal</p>
                 </VideoModal>
-                <button className="btn btn-outline-light" type="button" onClick={this.showVideoModal}>
+                <button id = "media"className="btn btn-outline-light" type="button" onClick={this.showVideoModal}>
                     Media
         </button>
             </main>
