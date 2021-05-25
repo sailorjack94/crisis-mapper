@@ -7,8 +7,8 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
     <div className={showHideVideoClassName}>
       <section className="modal-main-video">
       <div className="modal-video">
-    <h1>Videos</h1>
-    <h3>Learn more about each of the natural disasters by watching the videos below!</h3>
+    <h2>Videos</h2>
+    <h4>Learn more about each of the natural disasters by watching the videos below!</h4>
 
     <iframe 
     id = "earthquake-video"
