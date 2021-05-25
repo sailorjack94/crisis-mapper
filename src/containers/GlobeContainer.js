@@ -3,6 +3,7 @@ import Overlay from '../components/Overlay';
 import React, { useState, useRef, useEffect } from 'react';
 import { cleanData, normaliseLabels, apiUrls, propertySort } from '../helpers/api_helper';
 import ShowEvent from '../components/ShowEvent'
+import InfoModal from '../components/modal/InfoModal'
 
 const GlobeContainer = () => {
 
@@ -15,6 +16,7 @@ const GlobeContainer = () => {
     const [events, setEvents] = useState([]);
     const [showEvent, setShowEvent] = useState(false)
     const [selector, setSelector] = useState(0);
+
 
     useEffect(() => {
         getCountries();
@@ -79,6 +81,7 @@ const GlobeContainer = () => {
     if (selector === 0) {
         return (
             <div className="globe-container">
+                <InfoModal />
                 <Overlay eventTypes={eventTypes} onCrisisChange={onCrisisChange} />
                 <Globe
                     className="world"
@@ -103,6 +106,7 @@ const GlobeContainer = () => {
     } else if (selector === 1) {
         return (
             <div className="globe-container">
+                <InfoModal />
                 <Overlay eventTypes={eventTypes} onCrisisChange={onCrisisChange} />
                 <Globe
                     className="world"
