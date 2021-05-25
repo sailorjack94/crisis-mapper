@@ -8,6 +8,7 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
       <section className="modal-main-video">
       <div className="modal-video">
     <p>Videos</p>
+
     <iframe 
     id = "earthquake-video"
     class = "video"
@@ -18,9 +19,20 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
     frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen>
-
     </iframe>
-    <p> Hello</p>
+
+    <iframe 
+    id = "volcano-video"
+    class = "video"
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/VNGUdObDoLk" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+    </iframe>
+
       </div>
       <br></br>
         <button className="btn btn-outline-light" type="button" onClick={handleVideoClose}>
