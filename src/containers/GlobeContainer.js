@@ -9,7 +9,7 @@ const GlobeContainer = () => {
     const map_center = useRef({ lat: 10, lng: 105, altitude: 1.0 });
     const globeElement = useRef({ map_center: map_center.current });
     const globeClickActive = useRef(false);
-    const eventTypes = ["earthquakes", "volcanoes", "wildfires", "hurricanes"];
+    const eventTypes = ["earthquakes", "volcanoes", "wildfires"];
 
     const [countries, setCountries] = useState([]);
     const [events, setEvents] = useState([]);
