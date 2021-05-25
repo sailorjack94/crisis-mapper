@@ -1,8 +1,12 @@
-import React from 'react';
 import CrisisSelector from './CrisisSelector';
 import './Overlay.css';
+import React, { Component } from "react";
+import ModalContainer from './ModalContainer';
+
 
 const Overlay = ({eventTypes, onCrisisChange}) => {
+
+
     return (
         <div className="overlay">
             <h1>Crisis Mapper</h1>
@@ -14,6 +18,7 @@ const Overlay = ({eventTypes, onCrisisChange}) => {
                 </p>                
             </div>
             <CrisisSelector eventTypes={eventTypes} onCrisisChange={onCrisisChange}/>
+            <ModalContainer />
         </div>
     );
 }
