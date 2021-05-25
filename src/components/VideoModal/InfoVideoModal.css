@@ -28,3 +28,24 @@
 .modal-video {
     color : rgba(255, 255, 255, 0.801);
 }
+
+
+.video {
+  position:relative;
+
+  padding:20px;
+  width:32%;
+  padding-top:50px;
+  padding-right: 20px;
+
+ 
+  }
+
+iframe {
+  width:100%;
+ 
+  }
+/* .video{
+    padding-top:100px;
+    padding-right: 20px;
+}  */

@@ -7,7 +7,8 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
     <div className={showHideVideoClassName}>
       <section className="modal-main-video">
       <div className="modal-video">
-    <p>Videos</p>
+    <h1>Videos</h1>
+    <h3>Learn more about each of the natural disasters by watching the videos below!</h3>
 
     <iframe 
     id = "earthquake-video"
@@ -27,6 +28,18 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
     width="560" 
     height="315" 
     src="https://www.youtube.com/embed/VNGUdObDoLk" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+    </iframe>
+
+    <iframe
+    id = "wildfire-video"
+    class = "video"
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/5hghT1W33cY" 
     title="YouTube video player" 
     frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
