@@ -20,6 +20,7 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
           <Carousel.Item>
           <iframe
                   id = "wildfires1"
+                  class = "video"
                   width="315"
                   height="315"
                   src="https://www.youtube.com/embed/5hghT1W33cY"
@@ -27,7 +28,7 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen">
                 </iframe>
-            <Carousel.Caption>
+            <Carousel.Caption class = "caption">
               <h3>Learn more about wildfires!</h3>
             </Carousel.Caption>
           </Carousel.Item>
@@ -36,6 +37,7 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
           <Carousel.Item>
           <iframe 
                   id = "earthquakes1"
+                  class = "video"
                   width="315"
                   height="315"
                   src="https://www.youtube.com/embed/e7ho6z32yyo"
@@ -44,7 +46,7 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
                 >
                 </iframe>
-            <Carousel.Caption>
+            <Carousel.Caption class = "caption">
               <h3>Learn more about Earthquakes</h3>
             </Carousel.Caption>
           </Carousel.Item>
@@ -52,6 +54,7 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
 
           <Carousel.Item>
           <iframe
+                  class = "video"
                   id = "volcanoes1"
                   width="315"
                   height="315"
@@ -64,7 +67,7 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
                 >
                 </iframe>
 
-            <Carousel.Caption>
+            <Carousel.Caption class = "caption">
               <h3> Learn more about volcanoes</h3>
              
             </Carousel.Caption>
