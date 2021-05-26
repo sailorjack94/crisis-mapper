@@ -3,6 +3,10 @@ import './InfoVideoModal.css';
 const VideoModal = ({ handleVideoClose, show, children }) => {
   const showHideVideoClassName = show ? "modal display-block" : "modal display-none";
 
+//  const endVideo = modal.on('hidden.bs.modal', function (e) {
+//     "#modal iframe".attr("src", ("#modal iframe").attr("src"));
+// });
+
   return (
     <div className={showHideVideoClassName}>
       <section className="modal-main-video">
@@ -19,6 +23,8 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
     title="YouTube video player" 
     frameborder="0" 
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+    show
+    handleVideoClose
     >
     </iframe>
 
