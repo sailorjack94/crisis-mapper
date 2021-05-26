@@ -1,6 +1,6 @@
 import CrisisSelector from './CrisisSelector';
 import './Overlay.css';
-import React, { Component } from "react";
+import React from "react";
 import ModalContainer from './ModalContainer';
 import VideoModalContainer from './VideoModalContainer';
 
