@@ -10,8 +10,12 @@ class ModalContainer extends Component {
         };
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
+<<<<<<< HEAD
        
     }
+=======
+    };
+>>>>>>> main
 
     showModal = () => {
         this.setState({ show: true });
@@ -33,7 +37,7 @@ class ModalContainer extends Component {
         </button>
             </main>
         );
-    }
-}
+    };
+};
 
 export default ModalContainer;

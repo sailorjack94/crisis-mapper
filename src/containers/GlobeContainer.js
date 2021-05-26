@@ -22,7 +22,7 @@ const GlobeContainer = () => {
     useEffect(() => {
         getCountries();
         globeElement.current.controls().autoRotate = true;
-        globeElement.current.controls().autoRotateSpeed = 0.7;
+        globeElement.current.controls().autoRotateSpeed = 0.5;
     }, []);
 
     const getCountries = () => {
@@ -53,7 +53,6 @@ const GlobeContainer = () => {
     };
 
     const zoomToPoint = (data) => {
-        console.log(data)
         // capture the previous view
         if (!globeClickActive.current) {
             map_center.current = globeElement.current.pointOfView();
@@ -135,7 +134,7 @@ const GlobeContainer = () => {
                     pointLabel={event => event.ev_region}
                     pointColor={() => '#ff0000'}
                     pointRadius={0.5}
-                    pointAltitude={event => normaliseLabels(event.ev_mag_value, events[events.length - 1].ev_mag_value, events[0].ev_mag_value, 0.01, 0.5, console.log(event))}
+                    pointAltitude={event => normaliseLabels(event.ev_mag_value, events[events.length - 1].ev_mag_value, events[0].ev_mag_value, 0.01, 0.5)}
                     pointResolution={3}
                     //add callback function to display something. Callback event.
                     onPointClick={event => zoomToPoint(event)}

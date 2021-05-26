@@ -9,7 +9,7 @@
   
   .modal-main {
     position:fixed;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.75);
     width: 80%;
     height: auto;
     top:50%;
@@ -26,6 +26,11 @@
 }
 
 .modal-text {
+<<<<<<< HEAD
     color : rgba(255, 255, 255, 0.801);
 }
 
+=======
+    color : rgba(255, 255, 255, 0.9);
+}
+>>>>>>> main

@@ -92,6 +92,7 @@ export const normaliseLabels = function (data, propLow, propHigh, normLow = 0.5,
     const normal = (((data - propLow) / (propHigh - propLow)) * normRange) + normLow;
     return normal;
 
+
 };
 
 export const propertySort = (prop) => {
