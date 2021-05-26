@@ -31,7 +31,7 @@
 
 @media screen
  and (min-width: 460px), screen and (min-device-width:460px){
-.video {
+  .video {
   position:relative;
 
   padding:20px;
@@ -43,10 +43,10 @@
   }
 
 
-iframe {
-  width:100%;
+/* iframe {
+  width:50%;
  
-  }
+  } */
 }
   #media{
     justify-content:space-between;

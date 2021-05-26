@@ -1,4 +1,6 @@
 import './InfoVideoModal.css';
+import Carousel from 'react-bootstrap/Carousel'
+
 
 const VideoModal = ({ handleVideoClose, show, children }) => {
   const showHideVideoClassName = show ? "modal display-block" : "modal display-none";
@@ -8,22 +10,11 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
 // });
 
   return (
-    <div className={showHideVideoClassName}>
-      <section className="modal-main-video">
-        <div className="modal-video">
-          <h2>Videos</h2>
-          <h4>Learn more about each of the natural disasters by watching the videos below!</h4>
-
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-
-
-            <div class="carousel-inner">
-              <div class="carousel-item active">
+    <div>
+   <Carousel>
+           <Carousel.item>
+             
+             <div>
                 <iframe
                   id="wildfire-video"
                   class="d-block w-100"
@@ -33,8 +24,13 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen">
-                </iframe>
-              </div>
+                  </iframe>
+                  </div>
+                
+                 
+                 
+              </Carousel.Item>
+              <Carousel.item>
               <div class="carousel-item">
                 <iframe
                   id="earthquake-video"
@@ -45,11 +41,11 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                  show
-                  handleVideoClose
                 >
                 </iframe>
               </div>
+              </Carousel.item>
+              <Carousel.item>
               <div class="carousel-item">
                 <iframe
                   id="earthquake-video"
@@ -60,14 +56,15 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                  show
-                  handleVideoClose
+            
                 >
                 </iframe>
-              </div>
-            </div>
-          </div>
-        </div>
+                </div>
+                </Carousel.item>
+                </Carousel>
+                </div>
+            
+         
 
 
         <br></br>
@@ -76,8 +73,8 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
         </button>
         <br></br>
         <p>  </p>
-      </section>
-    </div>
+       
+
   );
 };
 
