@@ -33,6 +33,26 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
             </Carousel.Caption>
           </Carousel.Item>
 
+          <Carousel.Item>
+          <iframe
+                  class = "video"
+                  id = "wildfire-360"
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/kjx7z1F3pzE"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+               
+                >
+                </iframe>
+
+            <Carousel.Caption class = "caption">
+              <h3> Watch a 360&#176; video of a wildfire!</h3>
+            </Carousel.Caption>
+
+          </Carousel.Item>
+
 
           <Carousel.Item>
           <iframe 
@@ -68,9 +88,9 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
 
             <Carousel.Caption class = "caption">
               <h3> Learn more about volcanoes</h3>
-             
             </Carousel.Caption>
           </Carousel.Item>
+
           <Carousel.Item>
           <iframe 
           id = "volcanic-eruption"
