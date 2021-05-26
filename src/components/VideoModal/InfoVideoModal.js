@@ -67,7 +67,25 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
                 >
                 </iframe>
             <Carousel.Caption class = "caption">
-              <h3>Learn more about Earthquakes</h3>
+              <h3>Learn more about earthquakes!</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+
+
+          <Carousel.Item>
+          <iframe 
+                  id = "understand-earthquakes"
+                  class = "video"
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/cavq2HFBa-U"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                >
+                </iframe>
+            <Carousel.Caption class = "caption">
+              <h3>Understand why earthquakes occure!</h3>
             </Carousel.Caption>
           </Carousel.Item>
 
