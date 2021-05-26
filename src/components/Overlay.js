@@ -16,14 +16,11 @@ const Overlay = ({eventTypes, onCrisisChange}) => {
                 <p>Once you have selected a category, click on an event and more information will appear.</p>              
             </div>
             <ModalContainer />
-<<<<<<< HEAD
             <div>
             <VideoModalContainer/>
             </div>
-=======
             <br></br>
             <CrisisSelector eventTypes={eventTypes} onCrisisChange={onCrisisChange}/>
->>>>>>> main
         </div>
     );
 }
