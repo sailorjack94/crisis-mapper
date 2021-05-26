@@ -19,6 +19,7 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
         <Carousel>
           <Carousel.Item>
           <iframe
+                  id = "wildfires1"
                   width="315"
                   height="315"
                   src="https://www.youtube.com/embed/5hghT1W33cY"
@@ -27,13 +28,14 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen">
                 </iframe>
             <Carousel.Caption>
-              <h3>Learn about something!</h3>
+              <h3>Learn more about wildfires!</h3>
             </Carousel.Caption>
           </Carousel.Item>
 
 
           <Carousel.Item>
-          <iframe
+          <iframe 
+                  id = "earthquakes1"
                   width="315"
                   height="315"
                   src="https://www.youtube.com/embed/e7ho6z32yyo"
@@ -43,14 +45,14 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
                 >
                 </iframe>
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <h3>Learn more about Earthquakes</h3>
             </Carousel.Caption>
           </Carousel.Item>
 
 
           <Carousel.Item>
           <iframe
+                  id = "volcanoes1"
                   width="315"
                   height="315"
                   src="https://www.youtube.com/embed/e7ho6z32yyo"
@@ -63,8 +65,8 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
                 </iframe>
 
             <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              <h3> Learn more about volcanoes</h3>
+             
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
