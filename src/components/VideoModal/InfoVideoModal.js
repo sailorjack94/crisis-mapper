@@ -58,17 +58,33 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
                   id = "volcanoes1"
                   width="315"
                   height="315"
-                  src="https://www.youtube.com/embed/e7ho6z32yyo"
+                  src="https://www.youtube.com/embed/VNGUdObDoLk"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                  show
-                  handleVideoClose
+               
                 >
                 </iframe>
 
             <Carousel.Caption class = "caption">
               <h3> Learn more about volcanoes</h3>
+             
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+          <iframe 
+          class = "video"
+          width="315" 
+          height="315" 
+          src="https://www.youtube.com/embed/0-shWVW1UBc" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+          </iframe>
+
+            <Carousel.Caption class = "caption">
+              <h3> Watch a volcanic eruption!</h3>
              
             </Carousel.Caption>
           </Carousel.Item>
