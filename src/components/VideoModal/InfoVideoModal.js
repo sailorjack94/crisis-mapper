@@ -73,6 +73,7 @@ const VideoModal = ({ handleVideoClose, show, children }) => {
           </Carousel.Item>
           <Carousel.Item>
           <iframe 
+          id = "volcanic-eruption"
           class = "video"
           width="315" 
           height="315" 
