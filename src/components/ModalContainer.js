@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Modal from './modal/InfoModal';
 
+
 class ModalContainer extends Component {
     constructor() {
         super();
@@ -9,7 +10,7 @@ class ModalContainer extends Component {
         };
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);
-    }
+    };
 
     showModal = () => {
         this.setState({ show: true });
@@ -18,6 +19,7 @@ class ModalContainer extends Component {
     hideModal = () => {
         this.setState({ show: false });
     };
+    
 
     render() {
         return (
@@ -30,7 +32,7 @@ class ModalContainer extends Component {
         </button>
             </main>
         );
-    }
-}
+    };
+};
 
 export default ModalContainer;

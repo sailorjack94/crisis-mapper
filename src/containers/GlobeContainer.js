@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { cleanData, normaliseLabels, apiUrls, propertySort } from '../helpers/api_helper';
 import ShowEvent from '../components/ShowEvent'
 import InfoModal from '../components/modal/InfoModal'
+import InfoVideoModal from '../components/VideoModal/InfoVideoModal'
 
 const GlobeContainer = () => {
 
@@ -80,6 +81,7 @@ const GlobeContainer = () => {
         return (
             <div className="globe-container">
                 <InfoModal />
+                <InfoVideoModal/>
                 <Overlay eventTypes={eventTypes} onCrisisChange={onCrisisChange} />
                 <Globe
                     className="world"
@@ -105,6 +107,7 @@ const GlobeContainer = () => {
         return (
             <div className="globe-container">
                 <InfoModal />
+                <InfoVideoModal/>
                 <Overlay eventTypes={eventTypes} onCrisisChange={onCrisisChange} />
                 <Globe
                     className="world"

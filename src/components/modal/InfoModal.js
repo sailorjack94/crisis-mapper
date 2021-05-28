@@ -7,7 +7,7 @@ const Modal = ({ handleClose, show, children }) => {
     <div className={showHideClassName}>
       <section className="modal-main">
       <div className="modal-text">
-    <p>Crisis Mapper</p>
+    <h5>Crisis Mapper</h5>
     <p>The Global Crisis Mapper plots significant natural disasters and events on the globe. Choose from the drop down to the left to pick the type of event you want to see.</p>
     <p>Events are plotted as red spikes on the earth's surface. The height of the spike refers to the magnitude of the event. Click on a spike for more information in the bottom right have corner.</p>
     <p>Magnitude refers to Volcanic Explosivity Index (VEI) and Richter Scale score for Volcanoes and Earthquakes respectively.</p>
