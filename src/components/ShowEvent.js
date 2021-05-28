@@ -3,9 +3,10 @@ import React from 'react'
 import './ShowEvent.css'
 
 const ShowEvent = ({showEvent}) => {
-    return (
-         <div id = "click" >
-         <h5><b>Event Region: </b></h5>
+
+    return ( 
+         <div id="click">
+            <h5><b>Event Region: </b></h5>
             <p>{showEvent.ev_region}</p>
             <h5>Event Time: </h5>
             <p>{showEvent.time}</p>
@@ -13,7 +14,7 @@ const ShowEvent = ({showEvent}) => {
             <p>{showEvent.ev_mag_value}</p>
             <b><a className = 'url' rel="noreferrer" target='_blank' href={showEvent.url}>Find out more...</a></b>
          </div> 
-             )
+    )
 }
 
 export default ShowEvent;

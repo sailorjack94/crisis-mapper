@@ -17,7 +17,6 @@ const GlobeContainer = () => {
     const [showEvent, setShowEvent] = useState(false)
     const [selector, setSelector] = useState(0);
 
-
     useEffect(() => {
         getCountries();
         globeElement.current.controls().autoRotate = true;
@@ -137,7 +136,7 @@ const GlobeContainer = () => {
                     onPointClick={event => zoomToPoint(event)}
                     
                 />
-                <ShowEvent showEvent={showEvent} />
+                <ShowEvent showEvent={showEvent}/>
             </div>
         );
     };
