@@ -80,19 +80,15 @@ export const cleanData = function (data, dtype) {
 
 return cleanedData;
 };
-export const normaliseLabels = function (data, propLow, propHigh, normLow = 0.5, normHigh = 2.5) {
+
+export const normaliseLabels = function (data, propLow, propHigh, normLow=0.5, normHigh=2.5) {
     // normalise label size within the range [0.5, 2.5]
     // default determined from testing
-    if (data === 0) {
+    if (data === 0 || propLow === propHigh) {
         return normLow;
-    } else if (propLow===propHigh) {
-        return normLow;
-    };
+    } 
     const normRange = normHigh - normLow;
-    const normal = (((data - propLow) / (propHigh - propLow)) * normRange) + normLow;
-    return normal;
-
-
+    return (((data - propLow) / (propHigh - propLow)) * normRange) + normLow;
 };
 
 export const propertySort = (prop) => {
