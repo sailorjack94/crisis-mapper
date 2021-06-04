@@ -1,4 +1,4 @@
-# [I'm an inline-style link with title](https://crisis-mapper.herokuapp.com/ "View Live on Heroku!")
+# [View Crisis-Mapper Live on Heroku!](https://crisis-mapper.herokuapp.com/ "View Live on Heroku!")
 
 
 # MVP
