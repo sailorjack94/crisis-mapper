@@ -1,3 +1,6 @@
+# [I'm an inline-style link with title](https://crisis-mapper.herokuapp.com/ "View Live on Heroku!")
+
+
 # MVP
 
 The project is to design a educational and informative application. In this case our app will render a globe in React and detail it with up-to-date information about various crisis/disasters.
